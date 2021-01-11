@@ -1,0 +1,44 @@
+---
+layout: default
+type: research
+title: research
+permalink: /research/
+---
+
+<div class="border rounded-top bg-secondary font-weight-bold text-warning p-2">Conformation and molecular interactions</div>
+<div class="border rounded-bottom bg-white p-2">
+  <p>Building structural models of biological molecules and study their interactions is at the core of my work. 
+  Here after are several examples of modelling studies I carried on. If interested, all my publications are listed in the 
+  <a href="{{ site.url }}/communications/" target="_blank" class="text-success">Communications</a> section.</p>
+  {% for post in site.categories.research %}
+    {% if post.type == "interaction" %}
+    <div class="post pt-2">
+      <h2 class="research_title">{{ post.title }}</h2>
+      <img class="illustration" src="{{ site.url }}/research/images/{{ post.illustration }}"/>
+      {{ post.content }}
+    </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+</div>
+<br>
+<div class="border rounded-top bg-secondary font-weight-bold text-warning p-2">Membrane interactions</div>
+<div class="border rounded-bottom bg-white p-2">
+  <p>As membranes constitute the interface between living cells, organites and their environment, membrane interactions
+  are of paramount importance in many biological processes as well as for biotechnological applications. Molecular
+  dynamics gives the atomistic details of these processes and is very useful to study the evolution of bio-molecule and
+  membrane structures following their interactions.</p>
+  {% for post in site.categories.research %}
+    {% if post.type == "membrane" %}
+    <div class="post pt-2">
+      <h2 class="research_title">{{ post.title }}</h2>
+      <img class="illustration" src="{{ site.url }}/research/images/{{ post.illustration }}"/>
+      {{ post.content }}
+    </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+</div>
+
+
+

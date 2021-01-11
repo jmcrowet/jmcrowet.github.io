@@ -1,0 +1,116 @@
+---
+layout: default
+type: communications
+title: Communications
+permalink: /communications/
+---
+
+<div class="border rounded-top bg-secondary font-weight-bold text-warning p-2">Articles in peer-reviewed journals ({{ site.categories.article | size }})</div>
+<div class="border rounded-bottom bg-white p-2">
+{% for post in site.categories.article %}
+  <div class="post {% if forloop.index > 5 %}collapse collapse-articles{% endif %}">
+      <span class="title">{{ post.title }}</span><br/>
+      <span class="authors">{{ post.authors }}</span><br/>
+      <span class="journal">{{ post.journal }}.</span>
+      <span class="year">{{ post.year }}</span>
+      {% if post.doi %}
+        &nbsp;DOI: <a href="http://dx.doi.org/{{ post.doi }}" target="_blank" class="text-success">{{ post.doi }}</a>
+      {% endif %}
+  </div>
+{% endfor %}
+{% assign nbpost = site.categories.article | size %}
+{% if nbpost > 5 %}
+  <button id="article_toggle" class="text-success font-weight-bold p-1 rounded" type="button" data-toggle="collapse" data-target=".collapse-articles" 
+  aria-expanded="false" onclick="toggle(this.id)">More <i class='fas fa-chevron-circle-down' aria-hidden="true"></i></button>
+{% endif %}
+</div>
+
+<div class="border rounded-top bg-secondary font-weight-bold text-warning p-2 mt-3">Conference proceedings ({{site.categories.proceedings | size}})</div>
+<div class="border rounded-bottom bg-white p-2">
+{% for post in site.categories.proceedings %}
+  <div class="post {% if forloop.index > 5 %}collapse collapse-proceedings{% endif %}">
+    <span class="title">{{ post.title }}</span><br/>
+    <span class="authors">{{ post.authors }}</span><br/>
+    <span class="journal">{{ post.journal }}.</span> ({{ post.year }})
+    {% if post.doi %}
+      &nbsp;DOI:
+      <a href="http://dx.doi.org/{{ post.doi }}" target="_blank" class="text-success">{{ post.doi }}</a>
+    {% endif %}
+    <br>
+    {% if post.event_url %}
+      <a href="{{ post.event_url }}" target="_blank" class="icon text-success">{{ post.event }}</a>
+    {% else %}
+      <span class="event">{{ post.event }}</span>
+    {% endif %}
+    (<i class="fas fa-calendar-alt"></i> {{ post.event_date }} &mdash; <i class="fas fa-map-marker-alt"></i> {{ post.event_location }})
+  </div>
+{% endfor %}
+{% assign nbpost = site.categories.proceedings | size %}
+{% if nbpost > 5 %}
+  <button id="proceedings_toggle" class="text-success font-weight-bold p-1 rounded" type="button" data-toggle="collapse" data-target=".collapse-proceedings" 
+  aria-expanded="false" onclick="toggle(this.id)">More <i class='fas fa-chevron-circle-down'></i></button>
+{% endif %}
+</div>
+
+<div class="border rounded-top bg-secondary font-weight-bold text-warning p-2 mt-3">Talks ({{ site.categories.talk | size}})</div>
+<div class="border rounded-bottom bg-white p-2">
+{% for post in site.categories.talk %}
+  <div class="post {% if forloop.index > 5 %}collapse collapse-talks{% endif %}">
+    <span class="title">{{ post.title }}</span><br/>
+    {% if post.event_url %}
+      <a href="{{ post.event_url }}" target="_blank" class="icon text-success">{{ post.event }}</a>
+    {% else %}
+      <span class="event">{{ post.event }}</span>
+    {% endif %}
+    (<i class="fas fa-calendar-alt"></i> {{ post.event_date }} - <i class="fas fa-map-marker-alt"></i> {{ post.event_location }})
+  </div>
+{% endfor %}
+{% assign nbpost = site.categories.talk | size %}
+{% if nbpost > 5 %}
+  <button id="talk_toggle" class="text-success font-weight-bold p-1 rounded" type="button" data-toggle="collapse" data-target=".collapse-talks" 
+  aria-expanded="false" onclick="toggle(this.id)">More <i class='fas fa-chevron-circle-down'></i></button>
+{% endif %}
+<p class="disclaimer">This list only contains the work I presented personally.</p>
+</div>
+
+<div class="border rounded-top bg-secondary font-weight-bold text-warning p-2 mt-3">Posters ({{ site.categories.poster | size}})</div>
+<div class="border rounded-bottom bg-white p-2">
+{% for post in site.categories.poster %}
+  <div class="post {% if forloop.index > 5 %}collapse collapse-posters{% endif %}">
+    <span class="title">{{ post.title }}</span><br/>
+    {% if post.event_url %}
+      <a href="{{ post.event_url }}" target="_blank" class="icon text-success">{{ post.event }}</a>
+    {% else %}
+      <span class="event">{{ post.event }}</span>
+    {% endif %}
+    (<i class="fas fa-calendar-alt"></i> {{ post.event_date }} - <i class="fas fa-map-marker-alt"></i> {{ post.event_location }})
+  </div>
+{% endfor %}
+{% assign nbpost = site.categories.poster | size %}
+{% if nbpost > 5 %}
+  <button id="poster_toggle" class="text-success font-weight-bold p-1 rounded" type="button" data-toggle="collapse" data-target=".collapse-posters" 
+  aria-expanded="false" onclick="toggle(this.id)">More <i class='fas fa-chevron-circle-down'></i></button>
+{% endif %}
+<p class="disclaimer">This list only contains the work I presented personally.</p>
+</div>
+
+<div class="border rounded-top bg-secondary font-weight-bold text-warning p-2 mt-3">Awards and alike</div>
+<div class="border rounded-bottom bg-white p-2">
+{% for post in site.categories.award %}
+  <div class="article pb-3">
+    {{ post.content }}
+  </div>
+{% endfor %}
+</div>
+
+<script>
+  function toggle(id) {
+    var x = document.getElementById(id);
+    if (x.innerHTML.substring(0, 4) === "More") {
+      x.innerHTML = "Less <i class='fas fa-chevron-circle-up'></i>";
+    } else {
+      x.innerHTML = "More <i class='fas fa-chevron-circle-down'></i>";
+    }
+  };
+</script>
+

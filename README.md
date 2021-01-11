@@ -1,5 +1,3 @@
-# jmcrowet.github.io
-# Personal website
 
-# test
+This is my personal website
 

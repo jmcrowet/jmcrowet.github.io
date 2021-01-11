@@ -1,0 +1,119 @@
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: #ddd; }
+
+header {
+  width: 24%;
+  float: left;
+  background-color: #fff;
+  margin: 13px 0px 0px 12px;
+  padding: 10px 10px;
+  box-shadow: 0 0 10px rgba(20, 32, 40, 0.3); }
+
+footer {
+  float: left;
+  width: 100%;
+  font-size: 12px; }
+
+section {
+  width: 100%;
+  float: right;
+  margin: 10px auto;
+  padding: 10px 10px; }
+
+nav {
+  width: 72%;
+  float: right;
+  height: 162px;
+  margin: 13px 10px 0px 10px; }
+
+nav ul {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+nav li {
+  display: inline-block; }
+
+.current {
+  background-color: #17a2b8; }
+
+.current a {
+  color: #fff; }
+
+.title {
+  font-size: 24px; }
+
+.subtitle {
+  font-size: 13px; }
+
+.home {
+  width: 74%; }
+
+.carousel {
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: animateSectionBackground infinite 20s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out; }
+
+@keyframes animateSectionBackground {
+  0%,  15% {
+    background-image: url(/assets/img/Fig1.jpg); }
+  20%,  35% {
+    background-image: url(/assets/img/Fig2.jpg); }
+  40%,  55% {
+    background-image: url(/assets/img/Fig3.jpg); }
+  60%,  75% {
+    background-image: url(/assets/img/Fig4.jpg); }
+  80%, 100% {
+    background-image: url(/assets/img/Fig5.jpg); } }
+img#myface {
+  margin: -30px -20px;
+  max-height: 250px; }
+
+.contact {
+  font-size: 14px; }
+
+.contact_social a {
+  color: #17a2b8;
+  font-size: 15px; }
+
+.communications .post {
+  font-size: 13px;
+  margin-bottom: 1em; }
+
+.communications .title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #17a2b8; }
+
+.communications .journal {
+  font-style: italic; }
+
+.communications .year {
+  font-weight: bold; }
+
+.communications .disclaimer {
+  font-size: 10px;
+  margin: 0px 0px; }
+
+.communications .icon {
+  color: #17a2b8; }
+
+.illustration {
+  max-height: 500px;
+  max-width: 500px;
+  float: right;
+  margin: 0px 0px 0px 10px; }
+
+.research_title {
+  font-size: 18px;
+  color: #17a2b8;
+  font-style: italic;
+  font-weight: bold; }
+
+.toggle {
+  visibility: hidden; }

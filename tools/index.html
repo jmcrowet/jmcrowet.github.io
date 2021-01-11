@@ -1,0 +1,21 @@
+---
+layout: default
+type: tools
+title: tools
+permalink: /tools/
+---
+
+<p>Writing scripts and informatic code is part of modelling. The following sections presents some of the developping work I have done.</p>
+{% for post in site.categories.tools %}
+  <div class="border rounded-top bg-secondary font-weight-bold text-warning p-2">{{ post.title }}</div>
+  <div class="border rounded-bottom bg-white p-2">
+    {% if post.media == "movie" %}
+      <video class="illustration" muted autoplay loop controls><source src="{{ site.url }}/tools/images/{{ post.illustration }}" type="video/webm"></video>
+    {% else %}
+      <img class="illustration" src="{{ site.url }}/tools/images/{{ post.illustration }}"/>
+    {% endif %}
+    {{ post.content }}
+  </div>
+  <br>
+{% endfor %}
+
